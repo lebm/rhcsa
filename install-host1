@@ -8,7 +8,9 @@
 # --nographics: deprecated, use --graphics=<opt> instead (which option? --graphics none )
 # --disk: see man page for options. OBS: On this example the disk file alread existed
 # --location: See man page. On this case iso file was mounted on /mnt/RHEL7DVD. Needed for --extra-args
-# --extra-args: Configure "serial" console on this example.
+# --extra-args: Configure "serial" console on this example. 
+#   Additional kernel command line arguments to pass to the installer when performing a guest install from "--location". 
+#   One common usage is specifying an anaconda kickstart file for automated installs, such as --extra-args "ks=http://myserver/my.ks"
 # --disk: (cdrom) attache iso as device cdrom
 
 virt-install \
