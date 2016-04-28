@@ -1,9 +1,24 @@
 #!/usr/bin/bash
+#
+# --virt-type: see 'virsh capabilities' output in the <domain> tags.
+# --os-variant: see  'osinfo-query os' output
+# --name: domain name
+# --ram: how much ram
+# --vcpus: # of virtual cpus
+# --nographics: deprecated, use --graphics=<opt> instead (which option? --graphics none )
+# --disk: see man page for options. OBS: On this example the disk file alread existed
+# --location: See man page. On this case iso file was mounted on /mnt/RHEL7DVD. Needed for --extra-args
+# --extra-args: Configure "serial" console on this example.
+# --disk: (cdrom) attache iso as device cdrom
 
 virt-install \
+--virt-type kvm \
+--os-variant rhel7 \
 --name host1 \
 --ram 2048 \
---disk size=40,format=qcow2,path=/ext/libvirt/pool/host1.qcow2 \
 --vcpus 2 \
---cdrom /ext/isos/rhel-server-7.2-x86_64-dvd.iso \
---virt-type kvm --os-variant rhel7 --graphics spice
+--nographics \
+--disk path=/ext/libvirt/pool/host1.qcow2,format=qcow2 \
+--location /mnt/RHEL7DVD \
+--extra-args="console=tty0 console=ttyS0,115200n8" \
+--disk path=/ext/isos/rhel-server-7.2-x86_64-dvd.iso,device=cdrom
