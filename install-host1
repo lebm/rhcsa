@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+virt-install \
+--name host1 \
+--ram 2048 \
+--disk size=40,format=qcow2,path=/ext/libvirt/pool/host1.qcow2 \
+--vcpus 2 \
+--cdrom /ext/isos/rhel-server-7.2-x86_64-dvd.iso \
+--virt-type kvm --os-variant rhel7 --graphics spice
