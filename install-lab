@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+#
+# --virt-type: see 'virsh capabilities' output in the <domain> tags.
+# --os-variant: see  'osinfo-query os' output
+# --name: domain name
+# --ram: how much ram
+# --vcpus: # of virtual cpus
+# --disk: see man page for options. OBS: On this example the disk file alread existed
+# --cdrom: install "media"
+
+virt-install \
+--virt-type kvm \
+--os-variant rhel7.2 \
+--name lab \
+--ram 4096 \
+--vcpus 2 \
+--disk path=/ext/libvirt/pool/lab.qcow2,format=qcow2,size=16 \
+--cdrom /ext/isos/rhel-server-7.2-x86_64-dvd.iso
