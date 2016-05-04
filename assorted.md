@@ -10,4 +10,8 @@
 * echo ~- : shows previous dir
 * grep -w expr file: match lines were "expr" is a word
 * "..." does not quote \\, $ or \'
-* 
+* pidof and pgrep: shows PID of processes
+* processe nice range: -20..+19 (highest..lowest)
+* ps -l: shows nice
+* nice -2 command = nice -n 2 command
+* "nice -n" is better. It is not ambiguous
