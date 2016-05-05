@@ -11,7 +11,15 @@
 * grep -w expr file: match lines were "expr" is a word
 * "..." does not quote \\, $ or \'
 * pidof and pgrep: shows PID of processes
+* pkill crond = kill $(pidof crond)
 * processe nice range: -20..+19 (highest..lowest)
 * ps -l: shows nice
 * nice -2 command = nice -n 2 command
 * "nice -n" is better. It is not ambiguous
+* renice -n <prio> -p <pid>  
+* killing processes: kill pkill(pgrep) killall
+* check if pkg <foo> is installed: yum list installed foo
+* crontabs: /etc/crontab /etc/cron.d /var/spool/cron (users)
+* /etc/crontab shows crontab format
+* /var/spool/cron crontabs does not have the user field
+* 
