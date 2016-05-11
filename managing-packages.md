@@ -18,11 +18,13 @@ proc arch: x86_64
 
 OBS: for platform independent proc arch is "noarch"
 
-Package database: /var/lib/rpm
+Package database: /var/lib/rpm (shows on man rpm "Database")
 
 ## RHSM - Red Hat Subscription Management Service  
 
 * subscription-manager
+  * subscription-manager register --auto-attach
+  * subscription-manager remove --all
 
 ## rpm
 
@@ -33,7 +35,12 @@ Package database: /var/lib/rpm
 * rpm -qf <file> - shows pkg of files
 * rpm -qi <pkg> - shows info about pkg
 * rpm -ql <pkg> - list pkg files
-*
+* rpm -q --whatprovides /bin/ls
+* rpm -q --whatrequires iproute
+* rpm -ivh pkg
+* rpm -Uvh pkg - upgrade and install if not installed
+* rpm -Fvh \*.rpm - juts upgrade installed pkgs
+* rpm -ev pkg - remove pkg
 
 ## rpm2cpio
 
@@ -191,7 +198,7 @@ gpgcheck = 0
 yum -v repolist
 ```
 
-## List pkgs
+## yum List
 
 * yum list installed
 * yum list available
