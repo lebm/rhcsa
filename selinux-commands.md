@@ -10,5 +10,6 @@
 * chcon
 * restorecon
 * matchpathcon
+* seinfo
 * ls -Z
 * ps -Z
